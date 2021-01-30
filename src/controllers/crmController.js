@@ -29,3 +29,14 @@ export const getContact = (req, res) => {
     res.json(contact);
   });
 };
+
+// Particular Get Point
+export const getContactWithID = (req, res) => {
+  // This will find everything in the database
+  Contact.findById(req.params.contactID, (err, contact) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(contact);
+  });
+};
