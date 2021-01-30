@@ -40,3 +40,19 @@ export const getContactWithID = (req, res) => {
     res.json(contact);
   });
 };
+
+// PUT ENDPOINT
+export const updateContact = (req, res) => {
+  // This will find everything in the database
+  Contact.findOneAndUpdate(
+    { _id: req.params.contactID },
+    req.body,
+    { new: true, useFindAndModify: false },
+    (err, contact) => {
+      if (err) {
+        res.send(err);
+      }
+      res.json(contact);
+    }
+  );
+};
