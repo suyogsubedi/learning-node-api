@@ -56,3 +56,18 @@ export const updateContact = (req, res) => {
     }
   );
 };
+
+// DELETE ENDPOINT
+export const deleteContact = (req, res) => {
+  // This will find everything in the database
+  Contact.remove(
+    { _id: req.params.contactID },
+
+    (err, contact) => {
+      if (err) {
+        res.send(err);
+      }
+      res.json({ message: "Contact deleted successfully" });
+    }
+  );
+};
