@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 export const ContactSchema = new Schema({
-  firsName: {
+  firstName: {
     type: String,
     required: "Enter a first name",
   },
