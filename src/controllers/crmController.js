@@ -18,3 +18,14 @@ export const addNewContact = (req, res) => {
     res.json(contact);
   });
 };
+
+// Get Request
+export const getContact = (req, res) => {
+  // This will find everything in the database
+  Contact.find({}, (err, contact) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(contact);
+  });
+};
